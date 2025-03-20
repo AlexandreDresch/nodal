@@ -7,9 +7,9 @@ import dataProviderNestjsQuery, {
 import { createClient } from "graphql-ws";
 import { fetchWrapper } from "./fetch-wrapper";
 
-const API_URL = "https://api.nestjs-query.refine.dev/graphql";
-const WS_URL = "wss://api.nestjs-query.refine.dev/graphql";
-const API_BASE_URL = "https://api.crm.refine.dev";
+export const API_URL = "https://api.nestjs-query.refine.dev/graphql";
+export const WS_URL = "wss://api.nestjs-query.refine.dev/graphql";
+export const API_BASE_URL = "https://api.crm.refine.dev";
 
 const gqlClient = new GraphQLClient(API_URL, {
   fetch: (url: string, options: RequestInit) => {
