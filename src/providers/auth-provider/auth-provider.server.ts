@@ -1,3 +1,5 @@
+"use server";
+
 import type { AuthProvider } from "@refinedev/core";
 import { cookies } from "next/headers";
 

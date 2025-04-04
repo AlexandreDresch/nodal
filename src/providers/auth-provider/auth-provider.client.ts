@@ -1,91 +1,124 @@
-"use client";
+import { AuthBindings } from "@refinedev/core";
+import { API_BASE_URL, dataProvider } from "../data-provider";
 
-import type { AuthProvider } from "@refinedev/core";
-import Cookies from "js-cookie";
+export const authCredentials = {
+  email: "michael.scott@dundermifflin.com",
+  password: "demodemo",
+};
 
-const mockUsers = [
-  {
-    name: "John Doe",
-    email: "johndoe@mail.com",
-    roles: ["admin"],
-    avatar: "https://i.pravatar.cc/150?img=1",
-  },
-  {
-    name: "Jane Doe",
-    email: "janedoe@mail.com",
-    roles: ["editor"],
-    avatar: "https://i.pravatar.cc/150?img=1",
-  },
-];
-
-export const authProviderClient: AuthProvider = {
-  login: async ({ email, username, password, remember }) => {
-    // Suppose we actually send a request to the back end here.
-    const user = mockUsers[0];
-
-    if (user) {
-      Cookies.set("auth", JSON.stringify(user), {
-        expires: 30, // 30 days
-        path: "/",
+export const authProviderClient: AuthBindings = {
+  login: async ({ email }) => {
+    try {
+      const { data } = await dataProvider.custom({
+        url: API_BASE_URL,
+        method: "post",
+        headers: {},
+        meta: {
+          variables: { email },
+          rawQuery: `
+            mutation Login($email: String!) {
+              login(loginInput: { email: $email }) {
+                accessToken
+              }
+            }
+          `,
+        },
       });
+
+      localStorage.setItem("access_token", data.login.accessToken);
+
       return {
         success: true,
         redirectTo: "/",
       };
+    } catch (e) {
+      const error = e as Error;
+      return {
+        success: false,
+        error: {
+          message: "message" in error ? error.message : "Login failed",
+          name: "name" in error ? error.name : "Invalid email or password",
+        },
+      };
     }
-
-    return {
-      success: false,
-      error: {
-        name: "LoginError",
-        message: "Invalid username or password",
-      },
-    };
   },
+
   logout: async () => {
-    Cookies.remove("auth", { path: "/" });
+    localStorage.removeItem("access_token");
     return {
       success: true,
       redirectTo: "/login",
     };
   },
-  check: async () => {
-    const auth = Cookies.get("auth");
-    if (auth) {
-      return {
-        authenticated: true,
-      };
-    }
 
-    return {
-      authenticated: false,
-      logout: true,
-      redirectTo: "/login",
-    };
-  },
-  getPermissions: async () => {
-    const auth = Cookies.get("auth");
-    if (auth) {
-      const parsedUser = JSON.parse(auth);
-      return parsedUser.roles;
-    }
-    return null;
-  },
-  getIdentity: async () => {
-    const auth = Cookies.get("auth");
-    if (auth) {
-      const parsedUser = JSON.parse(auth);
-      return parsedUser;
-    }
-    return null;
-  },
   onError: async (error) => {
-    if (error.response?.status === 401) {
+    if (error.statusCode === "UNAUTHENTICATED") {
       return {
         logout: true,
+        ...error,
       };
     }
-
     return { error };
+  },
+
+  check: async () => {
+    try {
+      await dataProvider.custom({
+        url: API_BASE_URL,
+        method: "post",
+        headers: {},
+        meta: {
+          rawQuery: `
+            query Me {
+              me {
+                name
+              }
+            }
+          `,
+        },
+      });
+      return {
+        authenticated: true,
+        redirectTo: "/",
+      };
+    } catch (error) {
+      return {
+        authenticated: false,
+        redirectTo: "/login",
+      };
+    }
+  },
+
+  getIdentity: async () => {
+    const accessToken = localStorage.getItem("access_token");
+    try {
+      const { data } = await dataProvider.custom<{ me: any }>({
+        url: API_BASE_URL,
+        method: "post",
+        headers: accessToken
+          ? {
+              Authorization: `Bearer ${accessToken}`,
+            }
+          : {},
+        meta: {
+          rawQuery: `
+            query Me {
+              me {
+                id
+                name
+                email
+                phone
+                jobTitle
+                timezone
+                avatarUrl
+              }
+            }
+          `,
+        },
+      });
+      return data.me;
+    } catch (error) {
+      return undefined;
+    }
   },
 };
