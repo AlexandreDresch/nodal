@@ -11,9 +11,9 @@ export default async function Navbar() {
 
         <div className="flex items-center gap-4">
           <Button
-            variant="default"
+            variant="link"
             asChild
-            className="text-white hover:text-emerald-400 p-0 transition-colors duration-300"
+            className="text-white hover:text-emerald-400 p-0 transition-colors duration-200"
           >
             <Link href="/">Home</Link>
           </Button>
