@@ -1,15 +1,23 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { ChevronRightIcon } from "lucide-react";
 import Logo from "./logo";
+import { useLanguage } from "@/lib/i18n/language-context";
+import { LanguageSwitcher } from "./language-switcher";
 
-export default async function Navbar() {
+export default function Navbar() {
+  const { t, language } = useLanguage();
+
   return (
     <header className="fixed w-full z-50 flex justify-center items-center p-4 md:p-6 md:px-10">
       <nav className="flex justify-between items-center w-full">
         <Logo />
 
         <div className="flex items-center gap-4">
+          <LanguageSwitcher />
+          
           <Button
             variant="link"
             asChild

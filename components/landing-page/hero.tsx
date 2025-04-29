@@ -22,9 +22,10 @@ export default function Hero() {
             Smarter Delivery Routes
             <br />
             Powered by AI
-            <br />
-            Cut Costs by up to 40%
           </h1>
+          <h2 className="text-4xl font-bold text-white mb-4 max-w-3xl">
+            Cut Costs by up to <span className="bg-emerald-400">40%</span>
+          </h2>
           <p className="text-white text-lg md:text-xl mb-8 max-w-2xl">
             Automated multi-stop route planning
             <br />
@@ -35,7 +36,7 @@ export default function Hero() {
             size="lg"
             className="bg-emerald-400 hover:bg-emerald-500 text-white px-8"
           >
-            <Link href="/try">Try Free (7-Day Trial)</Link>
+            <Link href="/register">Try Free (7-Day Trial)</Link>
           </Button>
           <p className="text-white/80 my-4 md:mt-2 text-sm">
             Enterprise-grade solutions available
