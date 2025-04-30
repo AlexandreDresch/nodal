@@ -8,7 +8,7 @@ import { useLanguage } from "@/lib/i18n/language-context";
 import { LanguageSwitcher } from "./language-switcher";
 
 export default function Navbar() {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
 
   return (
     <header className="fixed w-full z-50 flex justify-center items-center p-4 md:p-6 md:px-10">
@@ -17,20 +17,20 @@ export default function Navbar() {
 
         <div className="flex items-center gap-4">
           <LanguageSwitcher />
-          
+
           <Button
             variant="link"
             asChild
             className="text-white hover:text-emerald-400 p-0 transition-colors duration-200"
           >
-            <Link href="/">Home</Link>
+            <Link href="/login">{t("header.login")}</Link>
           </Button>
           <Button
             asChild
             className="bg-emerald-400 hover:bg-emerald-500 text-white max-w-36 transition-colors duration-300"
           >
             <Link href="/register" className="flex items-center gap-2">
-              <span>Register</span> <ChevronRightIcon />
+              <span>{t("header.register")}</span> <ChevronRightIcon />
             </Link>
           </Button>
         </div>

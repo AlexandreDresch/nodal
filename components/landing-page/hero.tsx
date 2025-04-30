@@ -1,10 +1,14 @@
+"use client";
+
 import React from "react";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { Card, CardContent } from "../ui/card";
 import Image from "next/image";
+import { useLanguage } from "@/lib/i18n/language-context";
 
 export default function Hero() {
+  const { t } = useLanguage();
   return (
     <>
       <div
@@ -19,27 +23,32 @@ export default function Hero() {
 
         <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-4 md:px-8">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 max-w-3xl">
-            Smarter Delivery Routes
-            <br />
-            Powered by AI
+            {t("hero.title")
+              .split(" ")
+              .map((word, i, arr) => (
+                <React.Fragment key={i}>
+                  {word}
+                  {i === 2 && arr.length > 5 && <br />}
+                  {i !== arr.length - 1 && i !== 2 && " "}
+                </React.Fragment>
+              ))}
           </h1>
           <h2 className="text-4xl font-bold text-white mb-4 max-w-3xl">
-            Cut Costs by up to <span className="bg-emerald-400">40%</span>
+            {t("hero.subtitle")}{" "}
+            <span className="bg-emerald-400">{t("hero.costReduction")}</span>
           </h2>
           <p className="text-white text-lg md:text-xl mb-8 max-w-2xl">
-            Automated multi-stop route planning
-            <br />
-            with real-time updates and fleet management
+            {t("hero.description")}
           </p>
           <Button
             asChild
             size="lg"
             className="bg-emerald-400 hover:bg-emerald-500 text-white px-8"
           >
-            <Link href="/register">Try Free (7-Day Trial)</Link>
+            <Link href="/register">{t("hero.tryButton")}</Link>
           </Button>
           <p className="text-white/80 my-4 md:mt-2 text-sm">
-            Enterprise-grade solutions available
+            {t("hero.enterprise")}
           </p>
         </div>
       </div>
@@ -57,10 +66,11 @@ export default function Hero() {
                     height={65}
                   />
                 </div>
-                <h3 className="text-lg font-bold mb-2">Intelligent Routing</h3>
+                <h3 className="text-lg font-bold mb-2">
+                  {t("features.routing.title")}
+                </h3>
                 <p className="text-sm text-muted-foreground">
-                  Algorithms that calculate the most efficient route considering
-                  traffic, delivery windows, and vehicle capacity.
+                  {t("features.routing.description")}
                 </p>
               </CardContent>
             </Card>
@@ -75,10 +85,11 @@ export default function Hero() {
                     height={65}
                   />
                 </div>
-                <h3 className="text-lg font-bold mb-2">Dynamic Monitoring</h3>
+                <h3 className="text-lg font-bold mb-2">
+                  {t("features.monitoring.title")}
+                </h3>
                 <p className="text-sm text-muted-foreground">
-                  Track real-time vehicle locations and receive deviation alerts
-                  with automatic route recalculations.
+                  {t("features.monitoring.description")}
                 </p>
               </CardContent>
             </Card>
@@ -93,11 +104,13 @@ export default function Hero() {
                     height={65}
                   />
                 </div>
-                <h3 className="text-lg font-bold mb-2">Custom Constraints</h3>
+                <h3 className="text-lg font-bold mb-2">
+                  {t("features.constraints.title")}
+                </h3>
                 <p className="text-sm text-white/80">
-                  The feature that makes your routes{" "}
-                  <strong>realistic and executable</strong>, with tailored
-                  rules.
+                  {t("features.constraints.description")}{" "}
+                  <strong>{t("features.constraints.highlight")}</strong>,{" "}
+                  {t("features.constraints.ending")}
                 </p>
               </CardContent>
             </Card>
