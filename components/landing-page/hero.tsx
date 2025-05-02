@@ -12,7 +12,7 @@ export default function Hero() {
   return (
     <>
       <div
-        className="flex-1 flex flex-col relative"
+        className="flex-1 min-h-[600px] flex flex-col relative"
         style={{
           backgroundImage: "url('/images/truck-hero.jpg')",
           backgroundSize: "cover",

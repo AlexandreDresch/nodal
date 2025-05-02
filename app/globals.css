@@ -120,3 +120,47 @@
     @apply bg-background text-foreground;
   }
 }
+
+.navbar-container {
+}
+
+.navbar-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease, backdrop-filter 0.3s ease,
+    background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar-container.has-glass-effect::before {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  opacity: 1;
+  animation: fadeInGlass 0.4s ease-out forwards;
+}
+
+@keyframes fadeInGlass {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@supports not (backdrop-filter: blur(10px)) {
+  .navbar-container.has-glass-effect::before {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+}

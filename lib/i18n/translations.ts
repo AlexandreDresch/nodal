@@ -35,7 +35,7 @@ export const translations: Record<Language, Translations> = {
   en: {
     header: {
       login: "Sign In",
-      register: "Create Account",
+      register: "Get Started",
     },
     hero: {
       title: "Smarter Delivery Routes Powered by AI",
