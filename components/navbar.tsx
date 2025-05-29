@@ -41,12 +41,15 @@ export default function Navbar() {
         <Logo />
 
         <div className="flex items-center gap-4">
-          <LanguageSwitcher />
+          <LanguageSwitcher hasScrolled={scrolled} />
 
           <Button
             variant="link"
             asChild
-            className="text-white hover:text-emerald-400 p-0 transition-colors duration-200"
+            className={cn(
+              "text-white hover:text-emerald-400 p-0 transition-colors duration-200",
+              scrolled && "text-emerald-400 hover:text-emerald-500"
+            )}
           >
             <Link href="/login">{t("header.login")}</Link>
           </Button>

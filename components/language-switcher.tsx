@@ -11,8 +11,13 @@ import {
 import { Globe } from "lucide-react";
 import { motion } from "framer-motion";
 import Flag from "react-world-flags";
+import { cn } from "@/lib/utils";
 
-export function LanguageSwitcher() {
+export function LanguageSwitcher({
+  hasScrolled = false,
+}: {
+  hasScrolled?: boolean;
+}) {
   const { language, setLanguage } = useLanguage();
 
   return (
@@ -21,7 +26,7 @@ export function LanguageSwitcher() {
         <Button
           variant="ghost"
           size="icon"
-          className="text-white hover:text-emerald-400 hover:bg-transparent cursor-pointer"
+          className={cn("text-white hover:text-emerald-500 hover:bg-transparent cursor-pointer", hasScrolled && "text-emerald-500")}
         >
           <motion.div
             whileHover={{ rotate: 20 }}
@@ -32,7 +37,7 @@ export function LanguageSwitcher() {
           <span className="sr-only">Switch language</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="rounded-sm">
+      <DropdownMenuContent align="center" className="rounded-sm">
         <DropdownMenuItem
           onClick={() => setLanguage("en")}
           className={`flex items-center gap-2 ${
