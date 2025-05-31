@@ -1,3 +1,4 @@
+import DashboardShowcase from "@/components/landing-page/dashboard-showcase";
 import Features from "@/components/landing-page/features";
 import Hero from "@/components/landing-page/hero";
 
@@ -7,6 +8,10 @@ export default function Home() {
       <Hero />
 
       <Features />
+
+      <DashboardShowcase />
+
+      {/* Footer */}
     </div>
   );
 }
