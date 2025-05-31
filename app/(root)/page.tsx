@@ -1,3 +1,4 @@
+import { Footer } from "@/components/footer";
 import DashboardShowcase from "@/components/landing-page/dashboard-showcase";
 import Features from "@/components/landing-page/features";
 import Hero from "@/components/landing-page/hero";
@@ -11,7 +12,7 @@ export default function Home() {
 
       <DashboardShowcase />
 
-      {/* Footer */}
+      <Footer />
     </div>
   );
 }
