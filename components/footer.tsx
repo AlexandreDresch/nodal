@@ -2,7 +2,7 @@
 
 import React from "react";
 import type { ComponentProps, ReactNode } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion, animate } from "framer-motion";
 import {
   FacebookIcon,
   InstagramIcon,
@@ -10,6 +10,7 @@ import {
   YoutubeIcon,
 } from "lucide-react";
 import Logo from "./logo";
+import { useRouter } from "next/navigation";
 
 interface FooterLink {
   title: string;
@@ -62,13 +63,27 @@ const footerLinks: FooterSection[] = [
 ];
 
 export function Footer() {
+  const router = useRouter();
+
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      const start = window.scrollY;
+      const end = section.getBoundingClientRect().top + window.scrollY;
+      animate(start, end, {
+        duration: 0.8,
+        ease: [0.22, 1, 0.36, 1],
+        onUpdate: (latest: number) => window.scrollTo(0, latest),
+      });
+    }
+  };
+
   return (
     <footer className="relative w-full container mx-auto flex flex-col items-center justify-center bg-[radial-gradient(35%_128px_at_50%_0%,theme(backgroundColor.white/8%),transparent)] px-6 py-12 lg:py-16">
       <div className="bg-foreground/20 absolute top-0 right-1/2 left-1/2 h-px w-1/3 -translate-x-1/2 -translate-y-1/2 rounded-full blur" />
 
       <div className="grid w-full gap-8 xl:grid-cols-3 xl:gap-8">
         <AnimatedContainer className="space-y-4">
-          
           <Logo />
           <p className="text-muted-foreground mt-8 text-sm md:mt-0">
             © {new Date().getFullYear()} Nodal. All rights reserved.
@@ -84,6 +99,13 @@ export function Footer() {
                   {section.links.map((link) => (
                     <li key={link.title}>
                       <a
+                        onClick={() => {
+                          if (link.href.startsWith("#")) {
+                            scrollToSection(link.href.slice(1));
+                          } else {
+                            router.push(link.href);
+                          }
+                        }}
                         href={link.href}
                         className="hover:text-foreground inline-flex items-center transition-all duration-300"
                       >

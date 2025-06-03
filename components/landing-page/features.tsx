@@ -9,7 +9,10 @@ export default function Features() {
   const { t } = useLanguage();
 
   return (
-    <div className="w-full py-20 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.08)_1px,transparent_1px)] dark:bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[length:4px_4px]">
+    <section
+      className="w-full py-20 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.08)_1px,transparent_1px)] dark:bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[length:4px_4px]"
+      id="features"
+    >
       <div className="flex gap-4 flex-col items-start container mx-auto pb-8 px-4">
         <Badge
           variant="outline"
@@ -139,9 +142,9 @@ export default function Features() {
               className="aspect-square lg:aspect-auto"
               colSpan="double"
             />
-          </div> 
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
