@@ -2,6 +2,7 @@ import { Footer } from "@/components/footer";
 import DashboardShowcase from "@/components/landing-page/dashboard-showcase";
 import Features from "@/components/landing-page/features";
 import Hero from "@/components/landing-page/hero";
+import { PricingSection } from "@/components/landing-page/pricing-section";
 
 export default function Home() {
   return (
@@ -11,6 +12,8 @@ export default function Home() {
       <Features />
 
       <DashboardShowcase />
+
+      <PricingSection />
 
       <Footer />
     </div>

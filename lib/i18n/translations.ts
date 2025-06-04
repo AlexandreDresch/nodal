@@ -54,6 +54,26 @@ export type Translations = {
       items: string[];
     };
   };
+  pricingSection: {
+    title: string;
+    subtitle: string;
+    tierRange: string[];
+    paymentFrequency?: string;
+    discount: string;
+    popularDescription: string;
+    tiers: {
+      name: string;
+      price: {
+        monthly: number | string;
+        yearly: number | string;
+      };
+      description: string;
+      features: string[];
+      highlighted?: boolean;
+      popular?: boolean;
+      cta: string;
+    }[];
+  };
 };
 
 export const translations: Record<Language, Translations> = {
@@ -131,6 +151,70 @@ export const translations: Record<Language, Translations> = {
         ],
       },
     },
+    pricingSection: {
+      title: "Simple, Transparent Pricing",
+      subtitle: "No hidden fees, no surprises",
+      tierRange: ["monthly", "yearly"],
+      paymentFrequency: "Per month/user",
+      discount: "Save 35%",
+      popularDescription: "🔥 Most Popular",
+      tiers: [
+        {
+          name: "7-Day Demo",
+          price: { monthly: "Free", yearly: "Free" },
+          description: "Test our AI optimization with no risk",
+          features: [
+            "Full platform access for 7 days",
+            "Optimize up to 50 deliveries/day",
+            "Basic traffic & weather adjustments",
+            "Email support",
+            "No credit card required",
+          ],
+          cta: "Start Free Trial",
+        },
+        {
+          name: "Starter",
+          price: { monthly: 49, yearly: 39 },
+          description: "For independent couriers & small teams",
+          features: [
+            "Up to 200 deliveries/day",
+            "AI-powered multi-stop routing",
+            "2 driver accounts",
+            "Live GPS tracking",
+            "Email & chat support",
+          ],
+          cta: "Get Started",
+        },
+        {
+          name: "Business",
+          price: { monthly: 149, yearly: 119 },
+          description: "For growing delivery businesses",
+          features: [
+            "Unlimited deliveries",
+            "Priority AI routing (15-second updates)",
+            "Up to 10 driver accounts",
+            "Driver behavior analytics",
+            "API integrations (basic)",
+          ],
+          cta: "Get Started",
+          popular: true,
+        },
+        {
+          name: "Enterprise",
+          price: { monthly: "Custom", yearly: "Custom" },
+          description: "For large fleets & logistics providers",
+          features: [
+            "Custom AI model training",
+            "Unlimited vehicles & drivers",
+            "Dedicated account manager",
+            "24/7 phone support",
+            "ERP/WMS integrations",
+          ],
+          cta: "Contact Sales",
+          highlighted: true,
+        },
+      ],
+    },
   },
   pt: {
     header: {
@@ -206,6 +290,70 @@ export const translations: Record<Language, Translations> = {
           "Suporte a certificações verdes",
         ],
       },
+    },
+    pricingSection: {
+      title: "Preços Simples e Transparentes",
+      subtitle: "Sem taxas ocultas, sem surpresas",
+      tierRange: ["Mensal", "Anual"],
+      paymentFrequency: "Por mês/usuário",
+      discount: "Economize 35%",
+      popularDescription: "🔥 Mais Popular",
+      tiers: [
+        {
+          name: "Teste 7 Dias",
+          price: { monthly: "Grátis", yearly: "Grátis" },
+          description: "Teste nossa IA sem compromisso",
+          features: [
+            "Acesso completo por 7 dias",
+            "Até 50 entregas/dia",
+            "Ajustes básicos para tráfego e clima",
+            "Suporte por e-mail",
+            "Sem cartão de crédito",
+          ],
+          cta: "Testar Grátis",
+        },
+        {
+          name: "Inicial",
+          price: { monthly: 249, yearly: 199 },
+          description: "Para entregadores autônomos e pequenas equipes",
+          features: [
+            "Até 200 entregas/dia",
+            "Rotas com múltiplas paradas via IA",
+            "2 contas de motorista",
+            "Rastreamento GPS ao vivo",
+            "Suporte por e-mail e chat",
+          ],
+          cta: "Começar Agora",
+        },
+        {
+          name: "Negócios",
+          price: { monthly: 749, yearly: 599 },
+          description: "Para empresas em crescimento",
+          features: [
+            "Entregas ilimitadas",
+            "Rotas prioritárias (atualizações em 15 segundos)",
+            "Até 10 motoristas",
+            "Análise de comportamento de direção",
+            "Integrações via API (básicas)",
+          ],
+          cta: "Começar Agora",
+          popular: true,
+        },
+        {
+          name: "Empresarial",
+          price: { monthly: "Sob consulta", yearly: "Sob consulta" },
+          description: "Para frotas grandes e operadores logísticos",
+          features: [
+            "Treinamento personalizado de IA",
+            "Veículos e motoristas ilimitados",
+            "Gerente de conta dedicado",
+            "Suporte 24/7 por telefone",
+            "Integração com ERP/WMS",
+          ],
+          cta: "Fale com Vendas",
+          highlighted: true,
+        },
+      ],
     },
   },
 };
