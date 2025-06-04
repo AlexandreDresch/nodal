@@ -61,33 +61,6 @@ export default function Features() {
               colSpan="default"
             />
 
-            {/* <div className="bg-white/65 aspect-square p-3 sm:p-6 flex justify-between flex-col sm:bg-[url(/images/map-pins.png)] bg-contain bg-no-repeat bg-top-right">
-              <Map className="w-8 h-8 text-teal-500" />
-              <div className="flex flex-col">
-                <h3 className="text-lg sm:text-xl tracking-tight">
-                  Multi-Stop Route Planning
-                </h3>
-                <p className="text-muted-foreground max-w-xl text-xs">
-                  Optimize hundreds of stops in seconds.
-                </p>
-
-                <ul className="flex flex-col gap-2 my-4">
-                  <li className="text-muted-foreground max-w-xl text-sm sm:text-base flex gap-1">
-                    <ChevronsRight className="text-teal-500" />
-                    Batch address processing
-                  </li>
-                  <li className="text-muted-foreground max-w-xl text-sm sm:text-base flex gap-1">
-                    <ChevronsRight className="text-teal-500" />
-                    Priority-based sequencing (e.g., perishable goods)
-                  </li>
-                  <li className="text-muted-foreground max-w-xl text-sm sm:text-base flex gap-1">
-                    <ChevronsRight className="text-teal-500" />
-                    Customizable vehicle constraints
-                  </li>
-                </ul>
-              </div>
-            </div> */}
-
             <FeatureCard
               icon={<Truck className="w-8 h-8 text-teal-500" />}
               title={t("detailedFeatures.tracking.title")}
@@ -101,33 +74,6 @@ export default function Features() {
               className="aspect-square"
               colSpan="default"
             />
-
-            {/* <div className="bg-white/65 aspect-square p-6 flex justify-between flex-col sm:bg-[url(/images/satellite.png)]  bg-no-repeat bg-right bg-[length:40%]">
-              <Truck className="w-8 h-8 text-teal-500" />
-              <div className="flex flex-col">
-                <h3 className="text-xl tracking-tight">
-                  Live Driver Tracking & Analytics
-                </h3>
-                <p className="text-muted-foreground max-w-xl text-xs">
-                  Monitor and improve fleet performance.
-                </p>
-
-                <ul className="flex flex-col gap-2 my-4">
-                  <li className="text-muted-foreground max-w-xl text-sm sm:text-base flex gap-1">
-                    <ChevronsRight className="text-teal-500" />
-                    Real-time GPS tracking for ETA accuracy
-                  </li>
-                  <li className="text-muted-foreground max-w-xl text-sm sm:text-base flex gap-1">
-                    <ChevronsRight className="text-teal-500" />
-                    Driver behavior analytics (e.g., speed, idling)
-                  </li>
-                  <li className="text-muted-foreground max-w-xl text-sm sm:text-base flex gap-1">
-                    <ChevronsRight className="text-teal-500" />
-                    Customizable reports for KPIs
-                  </li>
-                </ul>
-              </div>
-            </div> */}
 
             <FeatureCard
               icon={<RecycleIcon className="w-8 h-8 text-teal-500" />}
