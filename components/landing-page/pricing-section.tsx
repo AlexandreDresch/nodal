@@ -16,7 +16,7 @@ export function PricingSection() {
   );
 
   return (
-    <section className="flex flex-col items-center gap-10 py-10" id="pricing">
+    <section className="flex flex-col items-center gap-10 py-10 px-5" id="pricing">
       <div className="space-y-7 text-center">
         <div className="space-y-4">
           <h1 className="text-4xl font-medium md:text-5xl">
