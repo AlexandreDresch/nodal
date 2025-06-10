@@ -10,7 +10,7 @@ export default function Features() {
 
   return (
     <section
-      className="w-full py-20 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.08)_1px,transparent_1px)] dark:bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[length:4px_4px]"
+      className="w-full py-20 dotted-background"
       id="features"
     >
       <div className="flex gap-4 flex-col items-start container mx-auto pb-8 px-4">

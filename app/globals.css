@@ -121,6 +121,12 @@
   }
 }
 
+@layer utilities {
+  .dotted-background {
+    @apply bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.08)_1px,transparent_1px)] dark:bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[length:4px_4px];
+  }
+}
+
 .navbar-container {
 }
 
