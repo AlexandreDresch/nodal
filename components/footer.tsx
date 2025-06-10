@@ -3,14 +3,10 @@
 import React from "react";
 import type { ComponentProps, ReactNode } from "react";
 import { motion, useReducedMotion, animate } from "framer-motion";
-import {
-  FacebookIcon,
-  InstagramIcon,
-  LinkedinIcon,
-  YoutubeIcon,
-} from "lucide-react";
+import { FacebookIcon, InstagramIcon, LinkedinIcon } from "lucide-react";
 import Logo from "./logo";
 import { useRouter } from "next/navigation";
+import { useLanguage } from "@/lib/i18n/language-context";
 
 interface FooterLink {
   title: string;
@@ -23,47 +19,45 @@ interface FooterSection {
   links: FooterLink[];
 }
 
-const footerLinks: FooterSection[] = [
-  {
-    label: "Product",
-    links: [
-      { title: "Features", href: "#features" },
-      { title: "Pricing", href: "#pricing" },
-      { title: "Testimonials", href: "#testimonials" },
-      { title: "Integration", href: "/" },
-    ],
-  },
-  {
-    label: "Company",
-    links: [
-      { title: "FAQs", href: "/faqs" },
-      { title: "About Us", href: "/about" },
-      { title: "Privacy Policy", href: "/privacy" },
-      { title: "Terms of Services", href: "/terms" },
-    ],
-  },
-  {
-    label: "Resources",
-    links: [
-      { title: "Blog", href: "/blog" },
-      { title: "Changelog", href: "/changelog" },
-      { title: "Brand", href: "/brand" },
-      { title: "Help", href: "/help" },
-    ],
-  },
-  {
-    label: "Social Links",
-    links: [
-      { title: "Facebook", href: "#", icon: FacebookIcon },
-      { title: "Instagram", href: "#", icon: InstagramIcon },
-      { title: "Youtube", href: "#", icon: YoutubeIcon },
-      { title: "LinkedIn", href: "#", icon: LinkedinIcon },
-    ],
-  },
-];
-
 export function Footer() {
+  const { t } = useLanguage();
+
   const router = useRouter();
+
+  const footerLinks: FooterSection[] = [
+    {
+      label: t("footer.product"),
+      links: [
+        { title: t("footer.links.features"), href: "#features" },
+        { title: t("footer.links.pricing"), href: "#pricing" },
+        { title: t("footer.links.testimonials"), href: "#testimonials" },
+      ],
+    },
+    {
+      label: t("footer.company"),
+      links: [
+        { title: t("footer.links.faqs"), href: "/faqs" },
+        { title: t("footer.links.about"), href: "/about" },
+        { title: t("footer.links.terms"), href: "/terms" },
+      ],
+    },
+    {
+      label: t("footer.resources"),
+      links: [
+        { title: t("footer.links.blog"), href: "/blog" },
+        { title: t("footer.links.changelog"), href: "/changelog" },
+        { title: t("footer.links.help"), href: "/help" },
+      ],
+    },
+    {
+      label: t("footer.social"),
+      links: [
+        { title: "Facebook", href: "#", icon: FacebookIcon },
+        { title: "Instagram", href: "#", icon: InstagramIcon },
+        { title: "LinkedIn", href: "#", icon: LinkedinIcon },
+      ],
+    },
+  ];
 
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
@@ -86,7 +80,7 @@ export function Footer() {
         <AnimatedContainer className="space-y-4">
           <Logo />
           <p className="text-muted-foreground mt-8 text-sm md:mt-0">
-            © {new Date().getFullYear()} Nodal. All rights reserved.
+            {t("footer.copyright")}
           </p>
         </AnimatedContainer>
 

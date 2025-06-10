@@ -86,6 +86,27 @@ export type Translations = {
       href?: string;
     }[];
   };
+  footer: {
+    product: string;
+    company: string;
+    resources: string;
+    social: string;
+    copyright: string;
+    links: {
+      features: string;
+      pricing: string;
+      testimonials: string;
+      faqs: string;
+      about: string;
+      terms: string;
+      blog: string;
+      changelog: string;
+      help: string;
+      facebook: string;
+      instagram: string;
+      linkedin: string;
+    };
+  };
 };
 
 export const translations: Record<Language, Translations> = {
@@ -272,6 +293,27 @@ export const translations: Record<Language, Translations> = {
         },
       ],
     },
+    footer: {
+      product: "Product",
+      company: "Company",
+      resources: "Resources",
+      social: "Social Links",
+      copyright: `© ${new Date().getFullYear()} Nodal. All rights reserved.`,
+      links: {
+        features: "Features",
+        pricing: "Pricing",
+        testimonials: "Testimonials",
+        faqs: "FAQs",
+        about: "About Us",
+        terms: "Terms of Services",
+        blog: "Blog",
+        changelog: "Changelog",
+        help: "Help",
+        facebook: "Facebook",
+        instagram: "Instagram",
+        linkedin: "LinkedIn",
+      },
+    },
   },
   pt: {
     header: {
@@ -456,6 +498,27 @@ export const translations: Record<Language, Translations> = {
           href: "#scaling-case",
         },
       ],
+    },
+    footer: {
+      product: "Produto",
+      company: "Empresa",
+      resources: "Recursos",
+      social: "Redes Sociais",
+      copyright: `© ${new Date().getFullYear()} Nodal. Todos os direitos reservados.`,
+      links: {
+        features: "Funcionalidades",
+        pricing: "Preços",
+        testimonials: "Depoimentos",
+        faqs: "Perguntas Frequentes",
+        about: "Sobre Nós",
+        terms: "Termos de Serviço",
+        blog: "Blog",
+        changelog: "Registro de Alterações",
+        help: "Ajuda",
+        facebook: "Facebook",
+        instagram: "Instagram",
+        linkedin: "LinkedIn",
+      },
     },
   },
 };
