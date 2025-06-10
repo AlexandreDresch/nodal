@@ -74,6 +74,18 @@ export type Translations = {
       cta: string;
     }[];
   };
+  testimonialsSection: {
+    title: string;
+    testimonials: {
+      author: {
+        name: string;
+        handle: string;
+        avatar: string;
+      };
+      text: string;
+      href?: string;
+    }[];
+  };
 };
 
 export const translations: Record<Language, Translations> = {
@@ -215,6 +227,51 @@ export const translations: Record<Language, Translations> = {
         },
       ],
     },
+    testimonialsSection: {
+      title: "Testimonials",
+      testimonials: [
+        {
+          author: {
+            name: "Logistics Manager",
+            handle: "@fernando_fleet",
+            avatar:
+              "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face",
+          },
+          text: "Reduced our fuel costs by 28% and improved delivery times by 35% in the first month. The AI routing is game-changing!",
+          href: "#fuel-savings-case",
+        },
+        {
+          author: {
+            name: "E-commerce Director",
+            handle: "@luiza_deliveries",
+            avatar:
+              "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face",
+          },
+          text: "Last-mile optimization cut our delivery complaints by 60%. Drivers love the real-time traffic adjustments.",
+          href: "#last-mile-case",
+        },
+        {
+          author: {
+            name: "Supply Chain VP",
+            handle: "@carlos_logistics",
+            avatar:
+              "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop&crop=face",
+          },
+          text: "Dynamic rerouting during floods saved us $120k in potential losses. The weather integration is brilliant.",
+          href: "#weather-case",
+        },
+        {
+          author: {
+            name: "Delivery Startup CEO",
+            handle: "@ana_fastdelivery",
+            avatar:
+              "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=face",
+          },
+          text: "Scaled from 50 to 300 daily deliveries without adding vehicles. The density optimization is magical!",
+          href: "#scaling-case",
+        },
+      ],
+    },
   },
   pt: {
     header: {
@@ -352,6 +409,51 @@ export const translations: Record<Language, Translations> = {
           ],
           cta: "Fale com Vendas",
           highlighted: true,
+        },
+      ],
+    },
+    testimonialsSection: {
+      title: "Depoimentos",
+      testimonials: [
+        {
+          author: {
+            name: "Gerente de Logística",
+            handle: "@fernando_fleet",
+            avatar:
+              "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face",
+          },
+          text: "Reduzimos nossos custos com combustível em 28% e melhoramos os prazos de entrega em 35% no primeiro mês. O roteamento por IA é revolucionário!",
+          href: "#fuel-savings-case",
+        },
+        {
+          author: {
+            name: "Diretora de E-commerce",
+            handle: "@luiza_deliveries",
+            avatar:
+              "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face",
+          },
+          text: "A otimização da última milha reduziu nossas reclamações de entregas em 60%. Os motoristas adoram os ajustes de tráfego em tempo real.",
+          href: "#last-mile-case",
+        },
+        {
+          author: {
+            name: "VP de Cadeia de Suprimentos",
+            handle: "@carlos_logistics",
+            avatar:
+              "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop&crop=face",
+          },
+          text: "O redirecionamento dinâmico durante enchentes nos salvou $120k em perdas potenciais. A integração com dados meteorológicos é brilhante.",
+          href: "#weather-case",
+        },
+        {
+          author: {
+            name: "CEO de Startup de Entregas",
+            handle: "@ana_fastdelivery",
+            avatar:
+              "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=face",
+          },
+          text: "Escalamos de 50 para 300 entregas diárias sem adicionar veículos. A otimização de densidade é mágica!",
+          href: "#scaling-case",
         },
       ],
     },
