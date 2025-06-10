@@ -45,6 +45,8 @@ export function TestimonialsSection() {
         "bg-background text-foreground dotted-background",
         "py-12 sm:py-24 md:py-32 px-0"
       )}
+      id="testimonials"
+      aria-label={t("testimonialsSection.title")}
     >
       <div className="mx-auto flex flex-col items-center gap-4 text-center sm:gap-8">
         <motion.div
