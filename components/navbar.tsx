@@ -51,13 +51,13 @@ export default function Navbar() {
               scrolled && "text-emerald-400 hover:text-emerald-500"
             )}
           >
-            <Link href="/login">{t("header.login")}</Link>
+            <Link href="/auth">{t("header.login")}</Link>
           </Button>
           <Button
             asChild
             className="bg-emerald-400 hover:bg-emerald-500 text-white max-w-36 transition-colors duration-300"
           >
-            <Link href="/register" className="flex items-center gap-2">
+            <Link href="/auth" className="flex items-center gap-2">
               <span>{t("header.register")}</span> <ChevronRightIcon />
             </Link>
           </Button>
