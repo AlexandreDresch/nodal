@@ -1,13 +1,14 @@
+"use client";
+
 import * as React from "react";
 import Image from "next/image";
 import AuthFormContainer from "@/components/auth/auth-form-container";
-
-const defaultQuote = {
-  text: "Transportation is the lifeblood of progress, connecting people, places, and possibilities.",
-  author: "Anonymous",
-};
+import { LanguageSwitcher } from "@/components/language-switcher";
+import { useLanguage } from "@/lib/i18n/language-context";
 
 export default function Auth() {
+  const { t } = useLanguage();
+
   return (
     <div className="w-full min-h-screen md:grid md:grid-cols-2">
       <style>{`
@@ -24,6 +25,10 @@ export default function Auth() {
           height={50}
           className="mb-6"
         />
+
+        <div className="absolute bottom-2 mr-2 right-0 md:right-1/2 bg-neutral-200 backdrop-blur-md rounded-sm">
+          <LanguageSwitcher />
+        </div>
         <AuthFormContainer />
       </div>
 
@@ -37,9 +42,9 @@ export default function Auth() {
 
         <div className="relative z-10 flex h-full items-center justify-center p-10">
           <blockquote className="space-y-2 text-center text-white">
-            <p className="text-lg font-medium">“{defaultQuote.text}”</p>
+            <p className="text-lg font-medium">“{t("auth.quote.text")}”</p>
             <cite className="block text-sm font-light text-neutral-300 not-italic">
-              — {defaultQuote.author}
+              — {t("auth.quote.author")}
             </cite>
           </blockquote>
         </div>
