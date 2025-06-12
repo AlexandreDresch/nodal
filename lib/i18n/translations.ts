@@ -107,6 +107,36 @@ export type Translations = {
       linkedin: string;
     };
   };
+  auth: {
+    quote: {
+      text: string;
+      author: string;
+    };
+    signIn: {
+      title: string;
+      description: string;
+      emailLabel: string;
+      emailPlaceholder: string;
+      passwordLabel: string;
+      signInButton: string;
+      noAccount: string;
+      registerLink: string;
+      socialLoginLabel: string;
+    };
+    signUp: {
+      title: string;
+      description: string;
+      nameLabel: string;
+      namePlaceholder: string;
+      emailLabel: string;
+      emailPlaceholder: string;
+      passwordLabel: string;
+      signUpButton: string;
+      alreadyHaveAccount: string;
+      signInLink: string;
+      socialLoginLabel: string;
+    };
+  };
 };
 
 export const translations: Record<Language, Translations> = {
@@ -314,6 +344,36 @@ export const translations: Record<Language, Translations> = {
         linkedin: "LinkedIn",
       },
     },
+    auth: {
+      quote: {
+        text: "Transportation is the lifeblood of progress, connecting people, places, and possibilities.",
+        author: "Anonymous",
+      },
+      signIn: {
+        title: "Welcome Back",
+        description: "Log in to your account to continue",
+        emailLabel: "Email Address",
+        emailPlaceholder: "email@example.com",
+        passwordLabel: "Password",
+        signInButton: "Sign In",
+        noAccount: "Don't have an account?",
+        registerLink: "Create one",
+        socialLoginLabel: "Or sign in with",
+      },
+      signUp: {
+        title: "Join Nodal",
+        description: "Create your account to get started",
+        nameLabel: "Full Name",
+        namePlaceholder: "John Doe",
+        emailLabel: "Email Address",
+        emailPlaceholder: "email@example.com",
+        passwordLabel: "Password",
+        signUpButton: "Sign Up",
+        alreadyHaveAccount: "Already have an account?",
+        signInLink: "Sign in",
+        socialLoginLabel: "Or sign up with",
+      },
+    },
   },
   pt: {
     header: {
@@ -518,6 +578,36 @@ export const translations: Record<Language, Translations> = {
         facebook: "Facebook",
         instagram: "Instagram",
         linkedin: "LinkedIn",
+      },
+    },
+    auth: {
+      quote: {
+        text: "O transporte é a veia da evolução, conectando pessoas, lugares e possibilidades.",
+        author: "Anônimo",
+      },
+      signIn: {
+        title: "Bem-vindo de Volta",
+        description: "Faça login na sua conta para continuar",
+        emailLabel: "Endereço de E-mail",
+        emailPlaceholder: "email@exemplo.com",
+        passwordLabel: "Senha",
+        signInButton: "Entrar",
+        noAccount: "Não tem uma conta?",
+        registerLink: "Crie uma",
+        socialLoginLabel: "Ou entre com",
+      },
+      signUp: {
+        title: "Junte-se ao Nodal",
+        description: "Crie sua conta para começar",
+        nameLabel: "Nome Completo",
+        namePlaceholder: "João da Silva",
+        emailLabel: "Endereço de E-mail",
+        emailPlaceholder: "email@exemplo.com",
+        passwordLabel: "Senha",
+        signUpButton: "Registrar",
+        alreadyHaveAccount: "Já tem uma conta?",
+        signInLink: "Entrar",
+        socialLoginLabel: "Ou registre-se com",
       },
     },
   },
