@@ -4,12 +4,12 @@ import NavLink from "../nav-link";
 
 import {
   BellIcon,
-  BellDotIcon,
   MoonIcon,
   SunDimIcon,
   AlignJustifyIcon,
   ArrowBigUpDashIcon,
   Search,
+  AlertCircleIcon,
 } from "lucide-react";
 import Image from "next/image";
 
@@ -20,10 +20,10 @@ const Navbar = (props: {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [x: string]: any;
 }) => {
-const { onOpenSidenav, brandText } = props;
-const [darkmode, setDarkmode] = React.useState(
+  const { onOpenSidenav, brandText } = props;
+  const [darkmode, setDarkmode] = React.useState(
     typeof window !== "undefined" && document.body.classList.contains("dark")
-);
+  );
   return (
     <nav className="sticky top-4 z-40 flex flex-row flex-wrap items-center justify-between rounded-xl bg-white/10 p-2 backdrop-blur-xl dark:bg-[#0b14374d]">
       <div className="ml-[6px]">
@@ -123,37 +123,27 @@ const [darkmode, setDarkmode] = React.useState(
         <Dropdown
           button={
             <p className="cursor-pointer">
-              <BellDotIcon className="h-4 w-4 text-gray-600 dark:text-white" />
+              <AlertCircleIcon className="h-4 w-4 text-gray-600 dark:text-white" />
             </p>
           }
           classNames={"py-2 top-6 -left-[250px] md:-left-[330px] w-max"}
           animation="origin-[75%_0%] md:origin-top-right transition-all duration-300 ease-in-out"
         >
           <div className="flex w-[350px] flex-col gap-2 rounded-[20px] bg-white p-4 shadow-xl shadow-shadow-500 dark:!bg-navy-700 dark:text-white dark:shadow-none">
-            <div
-              
-              className="mb-2 aspect-video w-full rounded-lg"
-            />
+            <div className="mb-2 aspect-video w-full rounded-lg" />
             <a
               target="blank"
-              href="https://horizon-ui.com/pro?ref=live-free-tailwind-react"
-              className="px-full linear flex cursor-pointer items-center justify-center rounded-xl bg-brand-500 py-[11px] font-bold text-white transition duration-200 hover:bg-brand-600 hover:text-white active:bg-brand-700 dark:bg-brand-400 dark:hover:bg-brand-300 dark:active:bg-brand-200"
-            >
-              Buy Horizon UI PRO
-            </a>
-            <a
-              target="blank"
-              href="https://horizon-ui.com/docs-tailwind/docs/react/installation?ref=live-free-tailwind-react"
+              href="https://google.com"
               className="px-full linear flex cursor-pointer items-center justify-center rounded-xl border py-[11px] font-bold text-navy-700 transition duration-200 hover:bg-gray-200 hover:text-navy-700 dark:!border-white/10 dark:text-white dark:hover:bg-white/20 dark:hover:text-white dark:active:bg-white/10"
             >
               See Documentation
             </a>
             <a
               target="blank"
-              href="https://horizon-ui.com/?ref=live-free-tailwind-react"
-              className="hover:bg-black px-full linear flex cursor-pointer items-center justify-center rounded-xl py-[11px] font-bold text-navy-700 transition duration-200 hover:text-navy-700 dark:text-white dark:hover:text-white"
+              href="https://google.com"
+              className="hover:bg-gray-200 px-full linear flex cursor-pointer items-center justify-center rounded-xl py-[11px] font-bold text-navy-700 transition duration-200 hover:text-navy-700 dark:text-white dark:hover:text-white"
             >
-              Try Horizon Free
+              Change Plan
             </a>
           </div>
         </Dropdown>
@@ -178,10 +168,10 @@ const [darkmode, setDarkmode] = React.useState(
         <Dropdown
           button={
             <Image
-              width="2"
-              height="20"
-              className="h-10 w-10 rounded-full"
-              src="/logo.svg"
+              width="40"
+              height="40"
+              className="size-6 rounded-full"
+              src="/images/user.png"
               alt="Elon Musk"
             />
           }
@@ -197,7 +187,7 @@ const [darkmode, setDarkmode] = React.useState(
             </div>
             <div className="mt-3 h-px w-full bg-gray-200 dark:bg-white/20 " />
 
-            <div className="ml-4 mt-3 flex flex-col">
+            <div className="ml-4 mt-3 flex flex-col justify-between">
               <a
                 href=" "
                 className="text-sm text-gray-800 dark:text-white hover:dark:text-white"

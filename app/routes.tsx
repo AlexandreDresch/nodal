@@ -1,45 +1,44 @@
-import React from 'react';
+import React from "react";
 
 import {
   HomeIcon,
-  ShoppingCartIcon,
   BarChartIcon,
   User2Icon,
-  LockIcon,
-} from 'lucide-react';
+  RouteIcon,
+  LogOutIcon,
+} from "lucide-react";
 
 const routes = [
   {
-    name: 'Main Dashboard',
-    layout: '/admin',
-    path: 'default',
+    name: "Main Dashboard",
+    layout: "/dashboard",
+    path: "default",
     icon: <HomeIcon className="h-6 w-6" />,
   },
   {
-    name: 'NFT Marketplace',
-    layout: '/admin',
-    path: 'nft-marketplace',
-    icon: <ShoppingCartIcon className="h-6 w-6" />,
-
+    name: "Routes",
+    layout: "/dashboard",
+    path: "routes",
+    icon: <RouteIcon className="h-6 w-6" />,
     secondary: true,
   },
   {
-    name: 'Data Tables',
-    layout: '/admin',
+    name: "Data Tables",
+    layout: "/dashboard",
     icon: <BarChartIcon className="h-6 w-6" />,
-    path: 'data-tables',
+    path: "data-tables",
   },
   {
-    name: 'Profile',
-    layout: '/admin',
-    path: 'profile',
+    name: "Profile",
+    layout: "/dashboard",
+    path: "profile",
     icon: <User2Icon className="h-6 w-6" />,
   },
   {
-    name: 'Sign In',
-    layout: '/auth',
-    path: 'sign-in',
-    icon: <LockIcon className="h-6 w-6" />,
+    name: "Sign Out",
+    layout: "/dashboard",
+    path: "sign-out",
+    icon: <LogOutIcon className="h-6 w-6" />,
   },
 ];
 export default routes;

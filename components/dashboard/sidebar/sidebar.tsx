@@ -2,6 +2,7 @@ import { XIcon } from "lucide-react";
 import { SidebarLinks } from "./components/links";
 
 import { IRoute } from "@/app/types/navigation";
+import Logo from "@/components/logo";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function Sidebar(props: { routes: IRoute[]; [x: string]: any }) {
@@ -19,13 +20,10 @@ export default function Sidebar(props: { routes: IRoute[]; [x: string]: any }) {
         <XIcon />
       </span>
 
-      <div className={`mx-[56px] mt-[50px] flex items-center`}>
-        <div className="ml-1 mt-1 h-2.5 font-poppins text-[26px] font-bold uppercase text-navy-700 dark:text-white">
-          Horizon <span className="font-medium">FREE</span>
-        </div>
+      <div className={`mx-[56px] mt-[30px] flex items-center`}>
+        <Logo />
       </div>
-      <div className="mb-7 mt-[58px] h-px bg-gray-300 dark:bg-white/30" />
-      {/* Nav item */}
+      <div className="mb-7 h-px bg-gray-300 dark:bg-white/30" />
 
       <ul className="mb-auto pt-1">
         <SidebarLinks routes={routes} />
