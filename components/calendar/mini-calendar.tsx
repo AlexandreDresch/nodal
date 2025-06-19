@@ -2,7 +2,7 @@ import { useState } from "react";
 import Calendar, { CalendarProps } from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import "styles/MiniCalendar.css";
+import "@/styles/mini-calendar.css";
 import { Card } from "../ui/card";
 
 type ValuePiece = Date | null;
