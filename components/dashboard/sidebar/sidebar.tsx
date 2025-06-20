@@ -21,7 +21,7 @@ export default function Sidebar(props: { routes: IRoute[]; [x: string]: any }) {
       </span>
 
       <div className={`mx-[56px] mt-[30px] flex items-center`}>
-        <Logo />
+        <Logo animateOnHover={false} />
       </div>
       <div className="mb-7 h-px bg-gray-300 dark:bg-white/30" />
 
