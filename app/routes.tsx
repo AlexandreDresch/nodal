@@ -5,7 +5,6 @@ import {
   BarChartIcon,
   User2Icon,
   RouteIcon,
-  LogOutIcon,
 } from "lucide-react";
 
 const routes = [
@@ -33,12 +32,6 @@ const routes = [
     layout: "/dashboard",
     path: "profile",
     icon: <User2Icon className="h-6 w-6" />,
-  },
-  {
-    name: "Sign Out",
-    layout: "/dashboard",
-    path: "sign-out",
-    icon: <LogOutIcon className="h-6 w-6" />,
   },
 ];
 export default routes;
