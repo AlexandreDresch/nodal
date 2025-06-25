@@ -5,6 +5,7 @@ import {
   BarChartIcon,
   User2Icon,
   RouteIcon,
+  TruckIcon
 } from "lucide-react";
 
 const routes = [
@@ -20,6 +21,12 @@ const routes = [
     path: "routes",
     icon: <RouteIcon className="h-6 w-6" />,
     secondary: true,
+  },
+  {
+    name: "Vehicles",
+    layout: "/dashboard",
+    path: "vehicles",
+    icon: <TruckIcon className="h-6 w-6" />,
   },
   {
     name: "Data Tables",
